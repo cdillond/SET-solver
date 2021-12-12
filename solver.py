@@ -60,9 +60,10 @@ def main():
     a SET occurs when, for each combination of three cards, for each type of attribute,
     there are either three unique values or one shared value.
 
-    a combination constitute a SET if no collection of attributes contains 2 unique values.
+    a combination constitutes a SET if no collection of attributes contains 2 unique values.
     """
-
+    set_counter = 0
+    
     for combination in coms:
         colors = []
         numbers = []
@@ -77,10 +78,15 @@ def main():
         
         if 2 not in {len(set(colors)), len(set(numbers)), len(set(shapes)), len(set(shades))}:
             print("SET FOUND")
+            set_counter += 1
             for card in combination:
                 print(card.color, card.number, card.shape, card.shade, card.cardID)
             
     
-    
+    if set_counter == 0:
+        print("board contains no SETs)
+    else:
+        print(f"{set_counter} SETS found")
+              
 if __name__ == '__main__':
     main()
