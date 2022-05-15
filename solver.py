@@ -84,7 +84,7 @@ def main():
             
     
     if set_counter == 0:
-        print("board contains no SETs)
+        print("board contains no SETs")
     else:
         print(f"{set_counter} SETS found")
               
